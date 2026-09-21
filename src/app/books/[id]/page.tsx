@@ -1,3 +1,4 @@
+import ReadButton from "@/Components/bookcomp/ReadButton";
 import { BookType } from "@/type/book.type";
 import Image from "next/image";
 
@@ -33,6 +34,7 @@ const BookDetailsPage = async ({ params }: bookDetailsProps) => {
               className="w-full max-w-xs drop-shadow-2xl object-contain"
               width={1000}
               height={600}
+              
             />
           </div>
 
@@ -102,10 +104,8 @@ const BookDetailsPage = async ({ params }: bookDetailsProps) => {
 
             {/* Action Buttons */}
             <div className="flex items-center gap-4">
-              <button className="flex-1 bg-white border border-gray-300 text-gray-800 font-medium py-2.5 px-6 rounded-lg hover:bg-gray-50 transition">
-                Mark as Read
-              </button>
-              <button className="flex-1 bg-[#53A5C2] text-white font-medium py-2.5 px-6 rounded-lg hover:bg-[#458da7] transition">
+              <ReadButton book={book}></ReadButton>
+              <button className=" bg-[#53A5C2] text-white font-medium py-2.5 px-6 rounded-lg hover:bg-[#458da7] transition">
                 Wishlist
               </button>
             </div>
