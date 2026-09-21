@@ -103,12 +103,8 @@ const BookDetailsPage = async ({ params }: bookDetailsProps) => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex items-center gap-4">
-              <ReadButton book={book}></ReadButton>
-              <button className=" bg-[#53A5C2] text-white font-medium py-2.5 px-6 rounded-lg hover:bg-[#458da7] transition">
-                Wishlist
-              </button>
-            </div>
+            <ReadButton book={book}></ReadButton>
+            
           </div>
         </div>
       </div>
