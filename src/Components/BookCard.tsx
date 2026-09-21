@@ -2,6 +2,7 @@ import { FaStar } from "react-icons/fa";
 
 import Image from "next/image";
 import { BookType } from "@/type/book.type";
+import Link from "next/link";
 
 export interface bookprops {
   book: BookType;
@@ -9,7 +10,7 @@ export interface bookprops {
 
 export default function BookCard({ book }: bookprops) {
   return (
-    <div className="max-w-xs rounded-2xl border border-gray-100 bg-white p-4 shadow-sm font-sans">
+    <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm font-sans">
       <div className="flex h-56 w-full items-center justify-center rounded-xl bg-gray-100 p-4">
         <Image
           src={book.image}
@@ -42,6 +43,13 @@ export default function BookCard({ book }: bookprops) {
           <FaStar />
           <span className="text-sm font-semibold">{book.rating}</span>
         </div>
+      </div>
+      <div className="w-full mt-4">
+        <Link href={`/books/${book.bookId}`}>
+        <button className="btn btn-success text-white w-full">
+          View Details
+        </button>
+        </Link>
       </div>
     </div>
   );

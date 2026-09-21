@@ -1,8 +1,13 @@
+import Link from "next/link";
+
 const Navber = () => {
   const Navlink = (
     <>
       <li>
-        <a>Home</a>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/books">All Books</Link>
       </li>
       <li>
         <a>Listed Books </a>

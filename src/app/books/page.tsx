@@ -1,5 +1,6 @@
+import BookCard from "@/Components/BookCard";
 import { BookType } from "@/type/book.type";
-import BookCard from "./BookCard";
+
 
 const getBooks = async () =>{
     const res = await fetch("http://localhost:3000/booksData.json");
@@ -13,7 +14,7 @@ const BookSection = async () => {
         <section className="container mx-auto my-20">
             <h2 className="font-bold text-[40px] text-center my-5">Books</h2>
             <div className="grid xl:grid-cols-4 grid-cols-3 gap-6">
-                {Books.slice(0,9).map((book:BookType) => {
+                {Books.map((book:BookType) => {
                     return <BookCard key={book.bookId} book={book} />
                 })}
             </div>
